@@ -9,6 +9,15 @@ namespace cst350_clc
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Add session services
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options => { 
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Set the session timeout
+                options.Cookie.HttpOnly = true; // Make the session cookie HTTP only
+                options.Cookie.IsEssential = true; // Make the session cookie essential
+            });
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -23,6 +32,8 @@ namespace cst350_clc
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession(); // added to enable sessions and keep login state
 
             app.UseAuthorization();
 

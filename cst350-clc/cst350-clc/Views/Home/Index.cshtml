@@ -3,6 +3,42 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @{
+        // Customize the Home page. Give a welcome to the user if logged in.
+        string? username = Context.Session.GetString("Username");
+        if (!string.IsNullOrEmpty(username))
+        {
+            <h1 class="display-4">Welcome, @username</h1>
+        }
+        else
+        {
+            <h1 class="display-4">Welcome</h1>
+        }
+    }
+    <hr />
+    <h2>Contributing Group Members</h2>
+
+    <div class="justify-content-center">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>GitHub</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Caleb Overmyer</td>
+                    <td><a href="https://github.com/COvermyer" class="link-dark">COvermyer</a></td>
+                    <td>Back End Development</td>
+                </tr>
+                <tr>
+                    <td>Edgar Armenta</td>
+                    <td><a href ="https://github.com/arrmentaedgar11" class="link-dark">arrmentaedgar11</a></td>
+                    <td>Front End Development</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
