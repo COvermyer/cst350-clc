@@ -31,6 +31,11 @@ namespace cst350_clc.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+		}
+
         /// <summary>
         /// Direct to Error Page
         /// </summary>
