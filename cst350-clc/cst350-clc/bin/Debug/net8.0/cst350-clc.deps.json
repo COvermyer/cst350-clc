@@ -9,6 +9,7 @@
       "cst350-clc/1.0.0": {
         "dependencies": {
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
+          "MineSweeper": "1.0.0",
           "MySql.Data": "9.4.0"
         },
         "runtime": {
@@ -1633,6 +1634,11 @@
             "fileVersion": "0.8.5.0"
           }
         }
+      },
+      "MineSweeper/1.0.0": {
+        "runtime": {
+          "MineSweeper.dll": {}
+        }
       }
     }
   },
@@ -2579,6 +2585,11 @@
       "sha512": "sha512-TR4j17WeVSEb3ncgL2NqlXEqcy04I+Kk9CaebNDplUeL8XOgjkZ7fP4Wg4grBdPLIqsV86p2QaXTkZoRMVOsew==",
       "path": "zstdsharp.port/0.8.5",
       "hashPath": "zstdsharp.port.0.8.5.nupkg.sha512"
+    },
+    "MineSweeper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

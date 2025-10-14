@@ -1,4 +1,5 @@
-﻿using cst350_clc.Filters;
+﻿using MineSweeper;
+using cst350_clc.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cst350_clc.Controllers
@@ -17,9 +18,12 @@ namespace cst350_clc.Controllers
         /// Index will route to main game screen
         /// </summary>
         /// <returns></returns>
-        [SessionCheckFilter]
+        //[SessionCheckFilter]
         public IActionResult Index()
         {
+            Board gameBoard = new Board(20, Difficulty.Insane);
+            ViewBag.GameBoard = gameBoard;
+
             return View();
         }
     }

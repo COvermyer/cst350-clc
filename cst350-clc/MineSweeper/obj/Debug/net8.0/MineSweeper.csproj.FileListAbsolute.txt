@@ -1,0 +1,12 @@
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\MineSweeper.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\MineSweeper.AssemblyInfoInputs.cache
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\MineSweeper.AssemblyInfo.cs
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\MineSweeper.csproj.CoreCompileInputs.cache
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\MineSweeper.sourcelink.json
+C:\git\cst350-clc\cst350-clc\MineSweeper\bin\Debug\net8.0\MineSweeper.deps.json
+C:\git\cst350-clc\cst350-clc\MineSweeper\bin\Debug\net8.0\MineSweeper.dll
+C:\git\cst350-clc\cst350-clc\MineSweeper\bin\Debug\net8.0\MineSweeper.pdb
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\MineSweeper.dll
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\refint\MineSweeper.dll
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\MineSweeper.pdb
+C:\git\cst350-clc\cst350-clc\MineSweeper\obj\Debug\net8.0\ref\MineSweeper.dll

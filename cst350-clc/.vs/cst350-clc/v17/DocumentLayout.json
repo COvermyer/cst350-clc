@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "C:\\git\\cst350-clc\\cst350-clc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\models\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\models\\user\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\models\\user\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\models\\user\\iusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\models\\user\\iusermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\models\\user\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\models\\user\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,80 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "cst350-clc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "cst350-clc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-13T01:10:01.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\ViewModels\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "cst350-clc\\Models\\ViewModels\\RegisterViewModel.cs",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\ViewModels\\RegisterViewModel.cs",
-              "RelativeToolTip": "cst350-clc\\Models\\ViewModels\\RegisterViewModel.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAkwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T01:07:36.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "cst350-clc\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\UserController.cs",
-              "RelativeToolTip": "cst350-clc\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAIwHIAAAAIAAAA",
+              "Title": "GameController.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\GameController.cs",
+              "RelativeDocumentMoniker": "cst350-clc\\Controllers\\GameController.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\GameController.cs",
+              "RelativeToolTip": "cst350-clc\\Controllers\\GameController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T01:07:08.431Z",
+              "WhenOpened": "2025-10-13T09:10:39.092Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserDAO.cs",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\User\\UserDAO.cs",
-              "RelativeDocumentMoniker": "cst350-clc\\Models\\User\\UserDAO.cs",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\User\\UserDAO.cs",
-              "RelativeToolTip": "cst350-clc\\Models\\User\\UserDAO.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwD0AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T00:52:02.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUserManager.cs",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\User\\IUserManager.cs",
-              "RelativeDocumentMoniker": "cst350-clc\\Models\\User\\IUserManager.cs",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\User\\IUserManager.cs",
-              "RelativeToolTip": "cst350-clc\\Models\\User\\IUserManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T01:04:10.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserModel.cs",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\User\\UserModel.cs",
-              "RelativeDocumentMoniker": "cst350-clc\\Models\\User\\UserModel.cs",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Models\\User\\UserModel.cs",
-              "RelativeToolTip": "cst350-clc\\Models\\User\\UserModel.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAiwDcAAABNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T01:03:18.408Z",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\Index.cshtml",
+              "RelativeDocumentMoniker": "cst350-clc\\Views\\Game\\Index.cshtml",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\Index.cshtml",
+              "RelativeToolTip": "cst350-clc\\Views\\Game\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-13T09:10:02.542Z",
               "EditorCaption": ""
             }
           ]

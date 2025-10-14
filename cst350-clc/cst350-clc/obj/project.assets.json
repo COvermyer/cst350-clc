@@ -2235,6 +2235,16 @@
         "runtime": {
           "lib/net8.0/ZstdSharp.dll": {}
         }
+      },
+      "MineSweeper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/MineSweeper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MineSweeper.dll": {}
+        }
       }
     }
   },
@@ -6556,11 +6566,17 @@
         "zstdsharp.port.0.8.5.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "MineSweeper/1.0.0": {
+      "type": "project",
+      "path": "../MineSweeper/MineSweeper.csproj",
+      "msbuildProject": "../MineSweeper/MineSweeper.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7",
+      "MineSweeper >= 1.0.0",
       "MySql.Data >= 9.4.0"
     ]
   },
@@ -6596,7 +6612,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\MineSweeper.csproj": {
+              "projectPath": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\MineSweeper.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
