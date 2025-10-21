@@ -76,6 +76,8 @@ namespace cst350_clc.Models.User
         /// <returns></returns>
         public int CheckCredentials(string username, string password, List<UserModel> users = null)
         {
+            // TODO: Refactor to query db for username match. If username match is found, compare passwords.
+
             // Nullable check. If param users is not defined, pull all records.
             // This allows dev to check credentials against a selection of users if desired
             if (users == null)

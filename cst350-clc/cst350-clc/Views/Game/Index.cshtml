@@ -1,60 +1,88 @@
 ﻿@{
 	ViewData["Title"] = "Minesweeper Game";
 	int Size = ViewBag.GameBoard.Size;
-	// int Size = 7;
 
-	// Size of each button in pixels (width and height)
-	int buttonSize = 60;
-	string buttonSizePx = buttonSize + "px";
+	var cellSize = 100 / Size; // Calculate button width percentage
 }
-<style>
-	.minesweeper-grid-wrapper{
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		height: 100vh;
-	}
+<link rel="stylesheet" href="~/css/minesweeper.css"/>
 
-	.minesweeper-grid-container{
-		display: grid;
-		gap: 6px;
-		margin-top: 12px;
-	}
-	.minesweeper-grid-button{
-		width: @buttonSizePx;
-		height: @buttonSizePx;
-		font-weight: bold;
-		cursor: pointer;
-		text-align: center;
-		vertical-align: center;
-	}
-</style>
-
-<div class="justify-content-center">
+<div class="dflex justify-content-center align-items-center">
 	<h1 class="text-center display-4">@ViewData["Title"]</h1>
 	<hr/>
 
-	<div class="minesweeper-grid-wrapper">
-		<div id="grid justify-content-center" class="minesweeper-grid-container" style="grid-template-columns:repeat(@Size, @buttonSizePx)">
-			@for (int row = 0; row < Size; row++)
-			{
-				for (int col = 0; col < Size; col++)
-				{
-					// Create a button for each cell in the grid, assign the btn an ID based on its row and column
-					<button class="minesweeper-grid-button" data-row="@row" data-col="@col" id="@String.Format("btn_{0}_{1}", row, col)">
-						@ViewBag.GameBoard.Cells[row, col].NumberOfBombNeighbors
-					</button>
+	<!-- DYNAMICALLY GENERATE THE MINESWEEPER BOARD -->
+	<div class="game-wrapper">
+		<form asp-action="GameCellClick" method="post" class="minesweeper-form">
+			<div class="minesweeper-container" style="grid-template-columns: repeat(@Size, 1fr); border: 2px solid #ccc;">
+				@for (int row = 0; row < Size; row++)
+				{ // individual row
+					@for (int col = 0; col < Size; col++)
+					{ // individual cells
+						var cell = ViewBag.GameBoard.Cells[row, col];
+						<div class="game-button" data-id="@String.Format("cell_{0}_{1}", row, col)">
+							<button class="minesweeper-button" type="submit" name="id" value="@String.Format("cell_{0}_{1}", row, col)">
+							@{
+								var imageSrc = "cellBomb.png";
+								//Determine which Image to pull based on the cell location and state
+								if (cell.IsVisited == false)
+								{
+									imageSrc = "cellUnvisited.png";
+								} 
+								else
+								{
+									if (cell.IsBomb == true)
+										imageSrc = "cellBomb.png";
+									else if (cell.NumberOfBombNeighbors > 0)
+										imageSrc = $"cell{cell.NumberOfBombNeighbors}.png";
+									else
+										imageSrc = "cellVisited.png";
+									}
+								<img src="~/img/@imageSrc" />
+							}
+							</button>
+						</div>
+					}
 				}
-			}
-		</div>
+			</div>
+		</form>
+	</div>
+
+	@{
+		// Display game status messages
+		if (ViewBag.GameBoard.DetermineGameState() == MineSweeper.GameState.Won)
+		{
+			<h2 class="text-center text-success mt-3">Congratulations! You Won!</h2>
+			<h3 class="text-center">Final Score: @MineSweeper.Board.CalculateScore(ViewBag.GameBoard)</h3>
+		} else if (ViewBag.GameBoard.DetermineGameState() == MineSweeper.GameState.Lost)
+		{
+			<h2 class="text-center text-danger mt-3">Game Over! You hit a bomb!</h2>
+		} else
+		{
+			<h2 class="text-center text-info mt-3">Game in Progress...</h2>
+		}
+	}
+
+	<hr />
+	<h5 class="text-center">New Game</h5>
+	<div class="game-wrapper">
+		<form asp-action="NewGame" method="post" class="text-center mt-4 newgame-form">
+			<div class="form-group mb-3">
+				<label for="Size" class="form-label">Board Size</label>
+				<input type="number" id="Size" name="Size" class="form-control d-inline-block w-auto text-center" min="2" max="50" value="10" required />
+			</div>
+
+			<div class="form-group mb-3">
+				<label for="Difficulty" class="form-label">Difficulty</label>
+				<select id="Difficulty" name="Difficulty" class="form-select d-inline-block w-auto text-center">
+					<option value="1">Easy</option>
+					<option value="2">Medium</option>
+					<option value="3">Hard</option>
+					<option value="4">Insane</option>
+					<option value="5">Impossible</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-primary">New Game</button>
+		</form>
 	</div>
 </div>
-
-<script>
-	document.getElementById('grid').addEventListener('click', async (ev) => {
-		const btn = ev.target.closest('.minesweeper-grid-button');
-		if (!btn) return; // Not a button
-
-		console.log("[" + btn.getAttribute("data-row"), ", " + btn.getAttribute("data-col") + "] clicked");
-	});
-</script>

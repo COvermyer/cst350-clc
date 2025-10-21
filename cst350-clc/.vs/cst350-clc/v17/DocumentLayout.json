@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\git\\cst350-clc\\cst350-clc\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\minesweeper.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\wwwroot\\css\\minesweeper.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|c:\\git\\cst350-clc\\cst350-clc\\minesweeper\\difficulty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|solutionrelative:minesweeper\\difficulty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|c:\\git\\cst350-clc\\cst350-clc\\minesweeper\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|solutionrelative:minesweeper\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,26 +42,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GameController.cs",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\GameController.cs",
-              "RelativeDocumentMoniker": "cst350-clc\\Controllers\\GameController.cs",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\GameController.cs",
-              "RelativeToolTip": "cst350-clc\\Controllers\\GameController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
+              "DocumentIndex": 3,
+              "Title": "Difficulty.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\Difficulty.cs",
+              "RelativeDocumentMoniker": "MineSweeper\\Difficulty.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\Difficulty.cs",
+              "RelativeToolTip": "MineSweeper\\Difficulty.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T09:10:39.092Z",
+              "WhenOpened": "2025-10-21T10:54:42.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\Board.cs",
+              "RelativeDocumentMoniker": "MineSweeper\\Board.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\Board.cs",
+              "RelativeToolTip": "MineSweeper\\Board.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAcwHUAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T10:06:15.799Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GameController.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\GameController.cs",
+              "RelativeDocumentMoniker": "cst350-clc\\Controllers\\GameController.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\GameController.cs",
+              "RelativeToolTip": "cst350-clc\\Controllers\\GameController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T09:42:28.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "minesweeper.css",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\minesweeper.css",
+              "RelativeDocumentMoniker": "cst350-clc\\wwwroot\\css\\minesweeper.css",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\minesweeper.css",
+              "RelativeToolTip": "cst350-clc\\wwwroot\\css\\minesweeper.css",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-21T08:44:04.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\Index.cshtml",
               "RelativeDocumentMoniker": "cst350-clc\\Views\\Game\\Index.cshtml",
               "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\Index.cshtml",
               "RelativeToolTip": "cst350-clc\\Views\\Game\\Index.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAIAAAAUAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAuwD8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-13T09:10:02.542Z",
               "EditorCaption": ""

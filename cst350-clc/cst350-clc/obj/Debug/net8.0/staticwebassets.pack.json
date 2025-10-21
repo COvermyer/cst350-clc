@@ -5,12 +5,64 @@
       "PackagePath": "staticwebassets\\cst350-clc.bundle.scp.css"
     },
     {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\minesweeper.css",
+      "PackagePath": "staticwebassets\\css\\minesweeper.css"
+    },
+    {
       "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell1.png",
+      "PackagePath": "staticwebassets\\img\\cell1.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell2.png",
+      "PackagePath": "staticwebassets\\img\\cell2.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell3.png",
+      "PackagePath": "staticwebassets\\img\\cell3.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell4.png",
+      "PackagePath": "staticwebassets\\img\\cell4.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell5.png",
+      "PackagePath": "staticwebassets\\img\\cell5.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell6.png",
+      "PackagePath": "staticwebassets\\img\\cell6.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell7.png",
+      "PackagePath": "staticwebassets\\img\\cell7.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell8.png",
+      "PackagePath": "staticwebassets\\img\\cell8.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cellBomb.png",
+      "PackagePath": "staticwebassets\\img\\cellBomb.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cellFlagged.png",
+      "PackagePath": "staticwebassets\\img\\cellFlagged.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cellUnvisited.png",
+      "PackagePath": "staticwebassets\\img\\cellUnvisited.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cellVisited.png",
+      "PackagePath": "staticwebassets\\img\\cellVisited.png"
     },
     {
       "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\js\\site.js",

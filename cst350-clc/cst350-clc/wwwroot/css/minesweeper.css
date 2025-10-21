@@ -1,0 +1,60 @@
+.game-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    user-select: none;
+    aspect-ratio: 1 / 1;
+}
+
+    .game-button img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.minesweeper-container {
+    /* Columns will be determined inline due to dynamic sizing */
+    display: grid;
+    width: min(90vw, 500px);
+    justify-content: center;
+    gap: 0px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.minesweeper-form {
+    display: inline-block;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.minesweeper-button {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+    outline: none;
+}
+
+.newgame-form {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
