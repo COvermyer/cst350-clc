@@ -1,88 +1,125 @@
 ﻿@{
-	ViewData["Title"] = "Minesweeper Game";
-	int Size = ViewBag.GameBoard.Size;
+    ViewData["Title"] = "Minesweeper Game";
+    int Size = ViewBag.GameBoard.Size;
+    var cellSize = 100 / Size;
 
-	var cellSize = 100 / Size; // Calculate button width percentage
+    // Use a safe incoming value if your controller sets it; otherwise default Easy(0)
+    int selectedDifficulty = 0;
+    if (ViewBag.SelectedDifficulty != null)
+    {
+        int.TryParse(ViewBag.SelectedDifficulty.ToString(), out selectedDifficulty);
+    }
 }
-<link rel="stylesheet" href="~/css/minesweeper.css"/>
+<link rel="stylesheet" href="~/css/minesweeper.css" />
 
 <div class="dflex justify-content-center align-items-center">
-	<h1 class="text-center display-4">@ViewData["Title"]</h1>
-	<hr/>
+    <h1 class="text-center display-4">@ViewData["Title"]</h1>
+    <hr />
 
-	<!-- DYNAMICALLY GENERATE THE MINESWEEPER BOARD -->
-	<div class="game-wrapper">
-		<form asp-action="GameCellClick" method="post" class="minesweeper-form">
-			<div class="minesweeper-container" style="grid-template-columns: repeat(@Size, 1fr); border: 2px solid #ccc;">
-				@for (int row = 0; row < Size; row++)
-				{ // individual row
-					@for (int col = 0; col < Size; col++)
-					{ // individual cells
-						var cell = ViewBag.GameBoard.Cells[row, col];
-						<div class="game-button" data-id="@String.Format("cell_{0}_{1}", row, col)">
-							<button class="minesweeper-button" type="submit" name="id" value="@String.Format("cell_{0}_{1}", row, col)">
-							@{
-								var imageSrc = "cellBomb.png";
-								//Determine which Image to pull based on the cell location and state
-								if (cell.IsVisited == false)
-								{
-									imageSrc = "cellUnvisited.png";
-								} 
-								else
-								{
-									if (cell.IsBomb == true)
-										imageSrc = "cellBomb.png";
-									else if (cell.NumberOfBombNeighbors > 0)
-										imageSrc = $"cell{cell.NumberOfBombNeighbors}.png";
-									else
-										imageSrc = "cellVisited.png";
-									}
-								<img src="~/img/@imageSrc" />
-							}
-							</button>
-						</div>
-					}
-				}
-			</div>
-		</form>
-	</div>
+    <div class="game-wrapper">
+        <form asp-action="GameCellClick" method="post" class="minesweeper-form">
+            <div class="minesweeper-container" style="grid-template-columns: repeat(@Size, 1fr); border: 2px solid #ccc;">
+                @for (int row = 0; row < Size; row++)
+                {
+                    @for (int col = 0; col < Size; col++)
+                    {
+                        var cell = ViewBag.GameBoard.Cells[row, col];
+                        <div class="game-button" data-id="@String.Format("cell_{0}_{1}", row, col)">
+                            <button class="minesweeper-button" type="submit" name="id" value="@String.Format("cell_{0}_{1}", row, col)">
+                                @{
+                                    // Sprite mapping (filenames must match what's in wwwroot/img/)
+                                    var imagePath = "img/cellUnvisited.png";
 
-	@{
-		// Display game status messages
-		if (ViewBag.GameBoard.DetermineGameState() == MineSweeper.GameState.Won)
-		{
-			<h2 class="text-center text-success mt-3">Congratulations! You Won!</h2>
-			<h3 class="text-center">Final Score: @MineSweeper.Board.CalculateScore(ViewBag.GameBoard)</h3>
-		} else if (ViewBag.GameBoard.DetermineGameState() == MineSweeper.GameState.Lost)
-		{
-			<h2 class="text-center text-danger mt-3">Game Over! You hit a bomb!</h2>
-		} else
-		{
-			<h2 class="text-center text-info mt-3">Game in Progress...</h2>
-		}
-	}
+                                    if (!cell.IsVisited)
+                                    {
+                                        if (cell.IsFlagged)
+                                        {
+                                            imagePath = "img/Flag Cell sprite.png";
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (cell.IsBomb)
+                                        {
+                                            imagePath = "img/Bomb cell sprite.png";
+                                        }
+                                        else if (cell.NumberOfBombNeighbors == 0)
+                                        {
+                                            imagePath = "img/empty cell sprite.png";
+                                        }
+                                        else if (cell.NumberOfBombNeighbors == 1)
+                                        {
+                                            imagePath = "img/1 cell sprite.png";
+                                        }
+                                        else if (cell.NumberOfBombNeighbors == 2)
+                                        {
+                                            imagePath = "img/2 cell sprite.png";
+                                        }
+                                        else if (cell.NumberOfBombNeighbors == 3)
+                                        {
+                                            imagePath = "img/3 cell sprite.png";
+                                        }
+                                        else
+                                        {
+                                            imagePath = $"img/cell{cell.NumberOfBombNeighbors}.png"; // fallback 4..8
+                                        }
+                                    }
+                                }
+                                <img src="@(Url.Content("~/" + imagePath))" />
+                            </button>
+                        </div>
+                    }
+                }
+            </div>
+        </form>
+    </div>
 
-	<hr />
-	<h5 class="text-center">New Game</h5>
-	<div class="game-wrapper">
-		<form asp-action="NewGame" method="post" class="text-center mt-4 newgame-form">
-			<div class="form-group mb-3">
-				<label for="Size" class="form-label">Board Size</label>
-				<input type="number" id="Size" name="Size" class="form-control d-inline-block w-auto text-center" min="2" max="50" value="10" required />
-			</div>
+    @{
+        // Avoid enum member names; compare via string so it works with any naming (e.g., Won/Lost)
+        var stateName = ViewBag.GameBoard.DetermineGameState().ToString();
+        if (stateName.IndexOf("win", System.StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            <h2 class="text-center text-success mt-3">Congratulations! You've won the game!</h2>
+        }
+        else if (stateName.IndexOf("lose", System.StringComparison.OrdinalIgnoreCase) >= 0
+        || stateName.IndexOf("lost", System.StringComparison.OrdinalIgnoreCase) >= 0
+        || stateName.IndexOf("over", System.StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            <h2 class="text-center text-danger mt-3">Game Over! You hit a bomb!</h2>
+        }
+        else
+        {
+            <h2 class="text-center text-info mt-3">Game in Progress...</h2>
+        }
+    }
 
-			<div class="form-group mb-3">
-				<label for="Difficulty" class="form-label">Difficulty</label>
-				<select id="Difficulty" name="Difficulty" class="form-select d-inline-block w-auto text-center">
-					<option value="1">Easy</option>
-					<option value="2">Medium</option>
-					<option value="3">Hard</option>
-					<option value="4">Insane</option>
-					<option value="5">Impossible</option>
-				</select>
-			</div>
-
-			<button type="submit" class="btn btn-primary">New Game</button>
-		</form>
-	</div>
+    <hr />
+    <h5 class="text-center">New Game</h5>
+    <div class="game-wrapper">
+        <form asp-action="NewGame" method="post" class="text-center mt-4 newgame-form">
+            <div class="form-group mb-3">
+                <label for="Size" class="form-label">Board Size</label>
+                <input type="number" id="Size" name="Size" class="form-control" min="5" max="20" value="@ViewBag.GameBoard.Size" />
+            </div>
+            <div class="form-group mb-3">
+                <label for="Difficulty" class="form-label">Difficulty</label>
+                <select id="Difficulty" name="Difficulty" class="form-select">
+                    <option value="0">Easy</option>
+                    <option value="1">Medium</option>
+                    <option value="2">Hard</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Start New Game</button>
+        </form>
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        // Set selected option without Razor C# in attributes (avoids RZ1031 warnings)
+        (function () {
+            var sel = document.getElementById('Difficulty');
+            if (sel) sel.value = '@selectedDifficulty';
+        })();
+    </script>
+}

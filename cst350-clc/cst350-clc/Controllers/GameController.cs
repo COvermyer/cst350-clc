@@ -1,35 +1,22 @@
-﻿using MineSweeper;
+﻿// cst350-clc/Controllers/GameController.cs
+using MineSweeper;
 using cst350_clc.Filters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cst350_clc.Controllers
 {
-    /// <summary>
-    /// GameController will  controll all minesweeper game functions
-    /// </summary>
-    public class GameController : Controller
+    
+    public partial class GameController : Controller
     {
-        ///GOALS:
-        /// - Implement Game Logic
-        /// - Implement Game Save (as a file?)
-        /// - Implement Game Loading
-
         static Board gameBoard = new Board(10, Difficulty.Easy);
 
         public GameController()
         {
-            //gameBoard.VisitCell(0, 0);
         }
 
-
-        /// <summary>
-        /// Index will route to main game screen
-        /// </summary>
-        /// <returns></returns>
         [SessionCheckFilter]
         public IActionResult Index()
         {
-            
             ViewBag.GameBoard = gameBoard;
             return View();
         }
@@ -44,20 +31,25 @@ namespace cst350_clc.Controllers
             System.Diagnostics.Debug.WriteLine("Parsed parts 2: " + parts[2]);
 
             if (parts.Length == 3 && int.TryParse(parts[1], out int row) && int.TryParse(parts[2], out int col))
-			{
-				gameBoard.FloodFill(row, col);
-			}
-			else
-			{
-                // Shoot an error message to the console.
+            {
+                gameBoard.FloodFill(row, col);
+            }
+            else
+            {
                 System.Diagnostics.Debug.WriteLine("Error parsing row and column from id: " + id);
-			}
+            }
+
+           
+            TrySaveWin(gameBoard); 
 
             return RedirectToAction("Index");
         }
 
         public IActionResult NewGame(int size, int difficulty)
         {
+            
+            RegisterGameStart(difficulty); 
+
             gameBoard = new Board(size, (Difficulty)difficulty);
             return RedirectToAction("Index");
         }

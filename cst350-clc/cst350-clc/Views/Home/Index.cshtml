@@ -1,22 +1,55 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 <div class="text-center">
-    @{
-        // Customize the Home page. Give a welcome to the user if logged in.
-        string? username = Context.Session.GetString("Username");
-        if (!string.IsNullOrEmpty(username))
-        {
-            <h1 class="display-4">Welcome, @username</h1>
-        }
-        else
-        {
-            <h1 class="display-4">Welcome</h1>
-        }
-    }
-    
-    <p>High Scores Table will go here</p>
-
-    <p><a class="btn btn-primary" href="/Game/Index">Play Game</a></p>
+    <h1 class="display-4">Welcome</h1>
+    <p>Play Minesweeper and set your personal best!</p>
 </div>
+
+<div class="mt-4">
+    <h2 class="h4">High Scores</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle mb-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Difficulty</th>
+                    <th>Score</th>
+                    <th>Time (s)</th>
+                    <th>When</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var top = ViewBag.TopScores as List<cst350_clc.Models.Scores.ScoreModel> ?? new();
+                    System.Func<int, string> diff = d => d switch { 0 => "Easy", 1 => "Medium", 2 => "Hard", _ => "?" };
+                    if (top.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="6" class="text-muted text-center">No scores yet. Be the first!</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        var i = 1;
+                        foreach (var s in top)
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>@(string.IsNullOrWhiteSpace(s.Username) ? "Guest" : s.Username)</td>
+                                <td>@diff(s.Difficulty)</td>
+                                <td>@s.Score</td>
+                                <td>@(s.TimeTaken < 0 ? "-" : s.TimeTaken)</td>
+                                <td>@s.PlayedAt.ToLocalTime().ToString("g")</td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

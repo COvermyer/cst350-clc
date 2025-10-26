@@ -1,49 +1,28 @@
-using cst350_clc.Models;
+// cst350-clc/Controllers/HomeController.cs
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using Microsoft.Extensions.Logging;
+using cst350_clc.Models.Scores;
+using System.Linq;
 
 namespace cst350_clc.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ScoreDAO _scores = new ScoreDAO();
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        /// <summary>
-        /// Direct to Home Page
-        /// </summary>
-        /// <returns></returns>
         public IActionResult Index()
         {
+            try { _scores.EnsureSchema(); } catch { /* don't break homepage if DB is down */ }
+            ViewBag.TopScores = _scores.Top(10).ToList();
             return View();
         }
 
-        /// <summary>
-        /// Direct to Privacy Policy page
-        /// </summary>
-        /// <returns></returns>
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            return View();
-		}
-
-        /// <summary>
-        /// Direct to Error Page
-        /// </summary>
-        /// <returns></returns>
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Privacy() => View();
     }
 }
