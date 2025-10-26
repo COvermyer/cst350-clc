@@ -1,10 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Minesweeper Game";
     int Size = ViewBag.GameBoard.Size;
-    var cellSize = 100 / Size;
 
     // Use a safe incoming value if your controller sets it; otherwise default Easy(0)
-    int selectedDifficulty = 0;
+    int selectedDifficulty = 1;
     if (ViewBag.SelectedDifficulty != null)
     {
         int.TryParse(ViewBag.SelectedDifficulty.ToString(), out selectedDifficulty);
@@ -47,18 +46,6 @@
                                         {
                                             imagePath = "img/empty cell sprite.png";
                                         }
-                                        else if (cell.NumberOfBombNeighbors == 1)
-                                        {
-                                            imagePath = "img/1 cell sprite.png";
-                                        }
-                                        else if (cell.NumberOfBombNeighbors == 2)
-                                        {
-                                            imagePath = "img/2 cell sprite.png";
-                                        }
-                                        else if (cell.NumberOfBombNeighbors == 3)
-                                        {
-                                            imagePath = "img/3 cell sprite.png";
-                                        }
                                         else
                                         {
                                             imagePath = $"img/cell{cell.NumberOfBombNeighbors}.png"; // fallback 4..8
@@ -76,14 +63,13 @@
 
     @{
         // Avoid enum member names; compare via string so it works with any naming (e.g., Won/Lost)
-        var stateName = ViewBag.GameBoard.DetermineGameState().ToString();
-        if (stateName.IndexOf("win", System.StringComparison.OrdinalIgnoreCase) >= 0)
+        var gameState = ViewBag.GameBoard.DetermineGameState();
+
+        if (gameState == MineSweeper.GameState.Won)
         {
             <h2 class="text-center text-success mt-3">Congratulations! You've won the game!</h2>
         }
-        else if (stateName.IndexOf("lose", System.StringComparison.OrdinalIgnoreCase) >= 0
-        || stateName.IndexOf("lost", System.StringComparison.OrdinalIgnoreCase) >= 0
-        || stateName.IndexOf("over", System.StringComparison.OrdinalIgnoreCase) >= 0)
+        else if (gameState == MineSweeper.GameState.Lost)
         {
             <h2 class="text-center text-danger mt-3">Game Over! You hit a bomb!</h2>
         }
@@ -104,9 +90,11 @@
             <div class="form-group mb-3">
                 <label for="Difficulty" class="form-label">Difficulty</label>
                 <select id="Difficulty" name="Difficulty" class="form-select">
-                    <option value="0">Easy</option>
-                    <option value="1">Medium</option>
-                    <option value="2">Hard</option>
+                    <option value="1">Easy</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Hard</option>
+                    <option value="4">Insane</option>
+                    <option value="5">Impossible</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Start New Game</button>

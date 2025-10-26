@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using cst350_clc.Models.Scores;
 using MineSweeper;
+using cst350_clc.Models.User;
+using Microsoft.AspNetCore.Razor.Language;
 
 namespace cst350_clc.Controllers
 {
@@ -11,7 +13,6 @@ namespace cst350_clc.Controllers
         private const string SESSION_START_TICKS = "GameStartUtcTicks";
         private const string SESSION_DIFFICULTY = "Difficulty";
         private readonly ScoreDAO _scores = new ScoreDAO();
-
        
         public void RegisterGameStart(int difficulty)
         {
@@ -23,24 +24,13 @@ namespace cst350_clc.Controllers
        
         public void TrySaveWin(Board board)
         {
-            var stateName = board.DetermineGameState().ToString();
-            if (stateName.IndexOf("win", StringComparison.OrdinalIgnoreCase) < 0) return;
+            var gameState = board.DetermineGameState();
+            if (gameState != GameState.Won) return; // if the player hasn't won, return
 
-            int timeSec = 0;
-            var ticksStr = HttpContext.Session.GetString(SESSION_START_TICKS);
-            if (long.TryParse(ticksStr, out var ticks))
-            {
-                timeSec = (int)Math.Max(0, (DateTime.UtcNow - new DateTime(ticks, DateTimeKind.Utc)).TotalSeconds);
-            }
-
-            int difficulty = 0;
-            int.TryParse(HttpContext.Session.GetString(SESSION_DIFFICULTY), out difficulty);
-
-            string username = User?.Identity?.IsAuthenticated == true
-                ? (User.Identity?.Name ?? "")
-                : (HttpContext.Session.GetString("Username") ?? "");
-
-            int score = ComputeScore(board, timeSec);
+            int timeSec = (int)(board.StartTime - board.EndTime).TotalSeconds; // simplify, board tracks time already
+            int difficulty = (int)board.DifficultyLevel; // can cast an int from enum
+            string username = HttpContext.Session.GetString("Username") ?? "GUEST"; // User is known to be logged in due to SessionCheckFilter
+            int score = Board.CalculateScore(board); // Board already calculates score
 
             try { _scores.EnsureSchema(); } catch { /* avoid impacting gameplay */ }
 

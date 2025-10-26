@@ -276,7 +276,7 @@ namespace MineSweeper
 
             // determine the score multiplier based on the difficulty level
             double[] difficultyMultipliers = { 1.0, 1.5, 2.0, 2.5, 3.0 }; // Multipliers for Easy, Medium, Hard, Insane, Impossible
-            double difficultyMultiplier = difficultyMultipliers[(int)board.DifficultyLevel - 1];
+            double difficultyMultiplier = difficultyMultipliers[(int)board.DifficultyLevel];
 
             // Determine board complexity (area * bomb percentage)
             // This gives a higher complexity value to boards that are larger and have more bombs.

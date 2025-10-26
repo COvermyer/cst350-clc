@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\Bomb cell sprite.png",
+      "PackagePath": "staticwebassets\\img\\Bomb cell sprite.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\Flag Cell sprite.png",
+      "PackagePath": "staticwebassets\\img\\Flag Cell sprite.png"
+    },
+    {
       "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cell1.png",
       "PackagePath": "staticwebassets\\img\\cell1.png"
     },
@@ -63,6 +71,10 @@
     {
       "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\cellVisited.png",
       "PackagePath": "staticwebassets\\img\\cellVisited.png"
+    },
+    {
+      "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\img\\empty cell sprite.png",
+      "PackagePath": "staticwebassets\\img\\empty cell sprite.png"
     },
     {
       "Id": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\js\\site.js",
