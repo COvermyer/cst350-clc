@@ -22,9 +22,9 @@
                 </tr>
             </thead>
             <tbody>
-                @{
+                @{ // TODO: Clean this up later
                     var top = ViewBag.TopScores as List<cst350_clc.Models.Scores.ScoreModel> ?? new();
-                    System.Func<int, string> diff = d => d switch { 0 => "Easy", 1 => "Medium", 2 => "Hard", _ => "?" };
+                    System.Func<int, string> diff = d => d switch { 1 => "Easy", 2 => "Medium", 3 => "Hard", 4 => "Insane", 5=> "Impossible", _ => "?" };
                     if (top.Count == 0)
                     {
                         <tr>

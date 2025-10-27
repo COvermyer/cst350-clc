@@ -229,7 +229,11 @@ namespace MineSweeper
                 {
                     visitedCellsCount++;
                     if (cell.IsBomb)
+                    {
+                        EndTime = DateTime.Now; // Set the end time if the game is lost
                         return GameState.Lost; // If a bomb is visited, the game is lost.
+                    }
+                       
                 }
 
                 // Check flags
