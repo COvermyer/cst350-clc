@@ -23,6 +23,17 @@
     width: 100%;
 }
 
+
+
+.game-section hr {
+    width: 100%;
+}
+
+.game-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 .minesweeper-container {
     /* Columns will be determined inline due to dynamic sizing */
     display: grid;
@@ -51,10 +62,19 @@
     outline: none;
 }
 
+.newgame-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .newgame-form {
-    display: inline-block;
+    display: block;
     padding: 20px;
     border-radius: 8px;
     background-color: #f8f9fa;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    width: 700px;
+    max-width: 1000px;
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cst350-clc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c68ea256a2da29ab8aa8fd45010107756dca8db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa5d4df8660c7294941c915d75d64fdc51d83f35")]
 [assembly: System.Reflection.AssemblyProductAttribute("cst350-clc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cst350-clc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

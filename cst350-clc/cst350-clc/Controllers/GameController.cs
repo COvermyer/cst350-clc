@@ -17,29 +17,31 @@ namespace cst350_clc.Controllers
         [SessionCheckFilter]
         public IActionResult Index()
         {
-            ViewBag.GameBoard = gameBoard;
-            return View();
+            return View(gameBoard);
         }
 
         [HttpPost]
-        public IActionResult GameCellClick(string id)
+        public IActionResult GameCellVisit(int row, int col)
         {
-            var parts = id.Split('_');
-            //System.Diagnostics.Debug.WriteLine("Clicked cell id: " + id);
-            //System.Diagnostics.Debug.WriteLine("Parsed parts 0: " + parts[0]);
-            //System.Diagnostics.Debug.WriteLine("Parsed parts 1: " + parts[1]);
-            //System.Diagnostics.Debug.WriteLine("Parsed parts 2: " + parts[2]);
+            if (gameBoard.DetermineGameState() != GameState.Continue)
+                return PartialView("_GameBoard", gameBoard); // Ignore any additional calls if the game is over
 
-            if (parts.Length == 3 && int.TryParse(parts[1], out int row) && int.TryParse(parts[2], out int col))
-            {
-                gameBoard.FloodFill(row, col);
-            }
+            gameBoard.FloodFill(row, col);
 
+            TrySaveWin(gameBoard);
+            return PartialView("_GameBoard", gameBoard);
+        }
 
-           
-            TrySaveWin(gameBoard); 
+        [HttpPost]
+        public IActionResult GameCellFlag(int row, int col)
+        {
+            if (gameBoard.DetermineGameState() != GameState.Continue)
+                return PartialView("_GameBoard", gameBoard); // Ignore any additional calls if the game is over
 
-            return RedirectToAction("Index");
+            gameBoard.FlagCell(row, col);
+            TrySaveWin(gameBoard);
+
+            return PartialView("_GameBoard", gameBoard);
         }
 
         public IActionResult NewGame(int size, int difficulty)

@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MineSweeper.Board
+@{
+	ViewData["GameState"] = Model.DetermineGameState();
+}
+
+<form asp-action="GameCellVisit" method="post" class="minesweeper-form">
+    <div class="minesweeper-container @(Model.DetermineGameState() != MineSweeper.GameState.Continue ? "game-disabled" : "")" style="grid-template-columns: repeat(@Model.Size, 1fr); border: 2px solid #ccc;">
+        @for (int row = 0; row < Model.Size; row++)
+        {
+            for (int col = 0; col < Model.Size; col++)
+            {
+				<div class="game-button" value="@String.Format("cell_{0}_{1}", row, col)" data-row="@row" data-col="@col">
+					<button class="minesweeper-button" type="submit" name="id" value="@String.Format("cell_{0}_{1}", row, col)" data-row="@row" data-col="@col">
+						@{
+							// Sprite mapping (filenames must match what's in wwwroot/img/)
+							var cell = Model.Cells[row, col];
+							var imagePath = "img/cellUnvisited.png";
+
+							if (!cell.IsVisited)
+							{
+								if (cell.IsFlagged)
+								{
+									imagePath = "img/Flag Cell sprite.png";
+								}
+							}
+							else
+							{
+								if (cell.IsBomb)
+								{
+									imagePath = "img/Bomb cell sprite.png";
+								}
+								else if (cell.NumberOfBombNeighbors == 0)
+								{
+									imagePath = "img/empty cell sprite.png";
+								}
+								else
+								{
+									imagePath = $"img/cell{cell.NumberOfBombNeighbors}.png"; // fallback 4..8
+								}
+							}
+						}
+						<img src="@(Url.Content("~/" + imagePath))" />
+					</button>
+				</div>
+            }
+        }
+    </div>
+</form>

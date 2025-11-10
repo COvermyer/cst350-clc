@@ -168,7 +168,7 @@ namespace MineSweeper
         /// <param name="col"></param>
         public void FlagCell(int row, int col)
         {
-            if (!Cells[row, col].IsVisited)
+            if (!Cells[row, col].IsVisited) // Cant flag a visited cell
             {
                 if (Cells[row, col].IsFlagged) // Cell is already flagged, unflag it
                     Cells[row, col].IsFlagged = false; // Unflag the cell if it is already flagged

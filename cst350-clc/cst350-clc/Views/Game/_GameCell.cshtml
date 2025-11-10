@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MineSweeper.Cell
+@{
+	var cell = Model;
+	var row = cell.Row;
+	var col = cell.Column;
+}
+
+<div class="game-button" value="@String.Format("cell_{0}_{1}", row, col)" data-row="@row" data-col="@col">
+	<button class="minesweeper-button" type="submit" name="id" value="@String.Format("cell_{0}_{1}", row, col)" data-row="@row" data-col="@col">
+		@{
+			// Sprite mapping (filenames must match what's in wwwroot/img/)
+			var imagePath = "img/cellUnvisited.png";
+
+			if (!cell.IsVisited)
+			{
+				if (cell.IsFlagged)
+				{
+					imagePath = "img/Flag Cell sprite.png";
+				}
+			}
+			else
+			{
+				if (cell.IsBomb)
+				{
+					imagePath = "img/Bomb cell sprite.png";
+				}
+				else if (cell.NumberOfBombNeighbors == 0)
+				{
+					imagePath = "img/empty cell sprite.png";
+				}
+				else
+				{
+					imagePath = $"img/cell{cell.NumberOfBombNeighbors}.png"; // fallback 4..8
+				}
+			}
+		}
+		<img src="@(Url.Content("~/" + imagePath))" />
+	</button>
+</div>

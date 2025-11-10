@@ -1,91 +1,29 @@
-﻿@{
+﻿@model MineSweeper.Board
+@{
     ViewData["Title"] = "Minesweeper Game";
-    int Size = ViewBag.GameBoard.Size;
 
-    // Use a safe incoming value if your controller sets it; otherwise default Easy(0)
-    int selectedDifficulty = 1;
-    if (ViewBag.SelectedDifficulty != null)
-    {
-        int.TryParse(ViewBag.SelectedDifficulty.ToString(), out selectedDifficulty);
-    }
+    // Use a safe incoming value if your controller sets it; otherwise default Easy(1)
+    int selectedDifficulty = 1; //FIXME
 }
 <link rel="stylesheet" href="~/css/minesweeper.css" />
 
-<div class="dflex justify-content-center align-items-center">
+<div class="d-flex flex-column justify-content-center align-items-center">
     <h1 class="text-center display-4">@ViewData["Title"]</h1>
     <hr />
 
     <div class="game-wrapper">
-        <form asp-action="GameCellClick" method="post" class="minesweeper-form">
-            <div class="minesweeper-container" style="grid-template-columns: repeat(@Size, 1fr); border: 2px solid #ccc;">
-                @for (int row = 0; row < Size; row++)
-                {
-                    @for (int col = 0; col < Size; col++)
-                    {
-                        var cell = ViewBag.GameBoard.Cells[row, col];
-                        <div class="game-button" data-id="@String.Format("cell_{0}_{1}", row, col)">
-                            <button class="minesweeper-button" type="submit" name="id" value="@String.Format("cell_{0}_{1}", row, col)">
-                                @{
-                                    // Sprite mapping (filenames must match what's in wwwroot/img/)
-                                    var imagePath = "img/cellUnvisited.png";
-
-                                    if (!cell.IsVisited)
-                                    {
-                                        if (cell.IsFlagged)
-                                        {
-                                            imagePath = "img/Flag Cell sprite.png";
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (cell.IsBomb)
-                                        {
-                                            imagePath = "img/Bomb cell sprite.png";
-                                        }
-                                        else if (cell.NumberOfBombNeighbors == 0)
-                                        {
-                                            imagePath = "img/empty cell sprite.png";
-                                        }
-                                        else
-                                        {
-                                            imagePath = $"img/cell{cell.NumberOfBombNeighbors}.png"; // fallback 4..8
-                                        }
-                                    }
-                                }
-                                <img src="@(Url.Content("~/" + imagePath))" />
-                            </button>
-                        </div>
-                    }
-                }
-            </div>
-        </form>
+        @Html.Partial("_GameBoard", Model)
     </div>
 
-    @{
-        // Avoid enum member names; compare via string so it works with any naming (e.g., Won/Lost)
-        var gameState = ViewBag.GameBoard.DetermineGameState();
-
-        if (gameState == MineSweeper.GameState.Won)
-        {
-            <h2 class="text-center text-success mt-3">Congratulations! You've won the game!</h2>
-        }
-        else if (gameState == MineSweeper.GameState.Lost)
-        {
-            <h2 class="text-center text-danger mt-3">Game Over! You hit a bomb!</h2>
-        }
-        else
-        {
-            <h2 class="text-center text-info mt-3">Game in Progress...</h2>
-        }
-    }
-
     <hr />
-    <h5 class="text-center">New Game</h5>
-    <div class="game-wrapper">
-        <form asp-action="NewGame" method="post" class="text-center mt-4 newgame-form">
+	<div class="newgame-wrapper newgame-form">
+        <h5 class="text-center">New Game</h5>
+        <hr />
+        <form asp-action="NewGame" method="post" class="text-center mt-4 ">
+            
             <div class="form-group mb-3">
                 <label for="Size" class="form-label">Board Size</label>
-                <input type="number" id="Size" name="Size" class="form-control" min="5" max="20" value="@ViewBag.GameBoard.Size" />
+                <input type="number" id="Size" name="Size" class="form-control" min="5" max="20" value="@Model.Size" />
             </div>
             <div class="form-group mb-3">
                 <label for="Difficulty" class="form-label">Difficulty</label>
@@ -109,5 +47,46 @@
             var sel = document.getElementById('Difficulty');
             if (sel) sel.value = '@selectedDifficulty';
         })();
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function isGameOver() {
+                return $(".minesweeper-container").hasClass("game-disabled");
+            }
+
+            // Condenses ajax calls
+            function sendMove(url, row, col) {
+                if (isGameOver()) return;
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: { row: row, col: col },
+                    success: function (result) {
+                        $(".game-wrapper").html(result);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            }
+
+            // Left Click action
+            $(document).on('click', ".game-button button", function (e) {
+                e.preventDefault();
+                var row = $(this).data("row");
+                var col = $(this).data("col");
+                sendMove("/Game/GameCellVisit", row, col);
+            });
+
+            // Right Click action
+            $(document).on('contextmenu', ".game-button button", function (e) {
+                e.preventDefault();
+                var row = $(this).data("row");
+                var col = $(this).data("col");
+                sendMove("/Game/GameCellFlag", row, col);
+            });
+        });
     </script>
 }
