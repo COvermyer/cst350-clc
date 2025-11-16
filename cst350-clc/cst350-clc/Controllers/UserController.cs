@@ -1,6 +1,7 @@
 ﻿using cst350_clc.Filters;
 using cst350_clc.Models.User;
 using cst350_clc.Models.ViewModels;
+using cst350_clc.Services.UserService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cst350_clc.Controllers

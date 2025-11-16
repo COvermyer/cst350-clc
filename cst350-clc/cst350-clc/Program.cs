@@ -1,3 +1,5 @@
+using cst350_clc.Services.GameSaveService;
+
 namespace cst350_clc
 {
     public class Program
@@ -8,6 +10,13 @@ namespace cst350_clc
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Add logging
+            builder.Services.AddLogging();
+
+            // Register Application Services
+            builder.Services.AddScoped<IGameSaveDAO, GameSaveDAO>();
+            builder.Services.AddScoped<IGameSaveService, GameSaveService>();
 
             // Add session services
             builder.Services.AddDistributedMemoryCache();

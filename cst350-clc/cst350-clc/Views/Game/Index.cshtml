@@ -1,6 +1,7 @@
 ﻿@model MineSweeper.Board
 @{
     ViewData["Title"] = "Minesweeper Game";
+    int user = (int)ViewContext.HttpContext.Session.GetInt32("User");
 
     // Use a safe incoming value if your controller sets it; otherwise default Easy(1)
     int selectedDifficulty = 1; //FIXME
@@ -13,6 +14,11 @@
 
     <div class="game-wrapper">
         @Html.Partial("_GameBoard", Model)
+    </div>
+
+    <div>
+        <a class="btn btn-primary" asp-action="SaveGame" asp-controller="Game">Save Game</a>
+        <a class="btn btn-primary" asp-action="ShowSavedGames" asp-controller="Game" asp-route-userId="@user">Show Saved Game</a>
     </div>
 
     <hr />

@@ -7,16 +7,36 @@
       "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\game\\_gameboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\game\\_gameboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\minesweeper.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\wwwroot\\css\\minesweeper.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\services\\gamesaveservice\\gamesaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\services\\gamesaveservice\\gamesaveservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\services\\gamesaveservice\\gamesavedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\services\\gamesaveservice\\gamesavedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|c:\\git\\cst350-clc\\cst350-clc\\minesweeper\\boardserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|solutionrelative:minesweeper\\boardserializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\game\\showsavedgames.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\game\\showsavedgames.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\game\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|c:\\git\\cst350-clc\\cst350-clc\\minesweeper\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B49A7D8B-3C13-45CA-8158-98B0BBEA56B4}|MineSweeper\\MineSweeper.csproj|solutionrelative:minesweeper\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|c:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\views\\game\\_gamecell.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5E016291-C1F9-4D2A-9EEB-0EEEC47EA503}|cst350-clc\\cst350-clc.csproj|solutionrelative:cst350-clc\\views\\game\\_gamecell.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,27 +58,107 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameSaveService.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Services\\GameSaveService\\GameSaveService.cs",
+              "RelativeDocumentMoniker": "cst350-clc\\Services\\GameSaveService\\GameSaveService.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Services\\GameSaveService\\GameSaveService.cs",
+              "RelativeToolTip": "cst350-clc\\Services\\GameSaveService\\GameSaveService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T15:29:55.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\Board.cs",
+              "RelativeDocumentMoniker": "MineSweeper\\Board.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\Board.cs",
+              "RelativeToolTip": "MineSweeper\\Board.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAmwEsAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T15:12:08.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_GameCell.cshtml",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\_GameCell.cshtml",
+              "RelativeDocumentMoniker": "cst350-clc\\Views\\Game\\_GameCell.cshtml",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\_GameCell.cshtml",
+              "RelativeToolTip": "cst350-clc\\Views\\Game\\_GameCell.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T14:57:32.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "_GameBoard.cshtml",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\_GameBoard.cshtml",
+              "RelativeDocumentMoniker": "cst350-clc\\Views\\Game\\_GameBoard.cshtml",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\_GameBoard.cshtml",
+              "RelativeToolTip": "cst350-clc\\Views\\Game\\_GameBoard.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T14:57:31.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameSaveDAO.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Services\\GameSaveService\\GameSaveDAO.cs",
+              "RelativeDocumentMoniker": "cst350-clc\\Services\\GameSaveService\\GameSaveDAO.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Services\\GameSaveService\\GameSaveDAO.cs",
+              "RelativeToolTip": "cst350-clc\\Services\\GameSaveService\\GameSaveDAO.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAcwGsAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T14:46:16.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShowSavedGames.cshtml",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\ShowSavedGames.cshtml",
+              "RelativeDocumentMoniker": "cst350-clc\\Views\\Game\\ShowSavedGames.cshtml",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\ShowSavedGames.cshtml",
+              "RelativeToolTip": "cst350-clc\\Views\\Game\\ShowSavedGames.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T14:31:15.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BoardSerializer.cs",
+              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\BoardSerializer.cs",
+              "RelativeDocumentMoniker": "MineSweeper\\BoardSerializer.cs",
+              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\MineSweeper\\BoardSerializer.cs",
+              "RelativeToolTip": "MineSweeper\\BoardSerializer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T14:26:57.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\Index.cshtml",
               "RelativeDocumentMoniker": "cst350-clc\\Views\\Game\\Index.cshtml",
               "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\Index.cshtml",
               "RelativeToolTip": "cst350-clc\\Views\\Game\\Index.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAAEIAAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-10T02:45:24.749Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "minesweeper.css",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\minesweeper.css",
-              "RelativeDocumentMoniker": "cst350-clc\\wwwroot\\css\\minesweeper.css",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\wwwroot\\css\\minesweeper.css",
-              "RelativeToolTip": "cst350-clc\\wwwroot\\css\\minesweeper.css",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAIwD8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-05T12:20:10.564Z"
+              "WhenOpened": "2025-11-16T14:15:50.926Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -68,22 +168,10 @@
               "RelativeDocumentMoniker": "cst350-clc\\Controllers\\GameController.cs",
               "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Controllers\\GameController.cs",
               "RelativeToolTip": "cst350-clc\\Controllers\\GameController.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAA7wCoAAAAAAAAA",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAmwGIAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T09:42:28.705Z",
+              "WhenOpened": "2025-11-14T11:28:16.088Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_GameBoard.cshtml",
-              "DocumentMoniker": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\_GameBoard.cshtml",
-              "RelativeDocumentMoniker": "cst350-clc\\Views\\Game\\_GameBoard.cshtml",
-              "ToolTip": "C:\\git\\cst350-clc\\cst350-clc\\cst350-clc\\Views\\Game\\_GameBoard.cshtml",
-              "RelativeToolTip": "cst350-clc\\Views\\Game\\_GameBoard.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-05T11:32:56.122Z"
             }
           ]
         }

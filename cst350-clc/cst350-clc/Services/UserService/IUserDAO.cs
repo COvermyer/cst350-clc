@@ -1,9 +1,11 @@
-﻿namespace cst350_clc.Models.User
+﻿using cst350_clc.Models.User;
+
+namespace cst350_clc.Services.UserService
 {
     /// <summary>
     /// Defines the CRUS usage contract of any collection or DAO objects for UserModel
     /// </summary>
-    public interface IUserManager
+    public interface IUserDAO
     {
         /// <summary>
         /// Method should return a List of all UserModels in the collection

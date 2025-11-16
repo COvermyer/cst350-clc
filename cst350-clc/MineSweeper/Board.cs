@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -62,6 +63,24 @@ namespace MineSweeper
         /// This value is not dynamic and will not change during the game. This value is used prior to game start to determine the TotalBombs value.
         /// </summary>
         private decimal BombPercentage { get; set;}
+
+        public Board(int size) // creates a blank board for deserialization
+        {
+            this.Size = size;
+            Cells = new Cell[size, size]; // create a temp cells array
+            for (int row = 0; row < size; row++)
+                for (int col = 0; col < size; col++)
+                    Cells[row, col] = new Cell()
+                    {
+                        Row = row,
+                        Column = col,
+                        IsBomb = false,
+                        IsFlagged = false,
+                        IsVisited = false,
+                        HasSpecialReward = false,
+                        NumberOfBombNeighbors = 0
+                    };
+        }
 
         /// <summary>
         /// Constructor for the Board class. Initializes the board with the specified size and difficulty level.
@@ -363,7 +382,7 @@ namespace MineSweeper
         /// <summary>
         /// Iterates through each cell and counts how many bombs are neighboring the cell. If the cell itself is a bomb, the value is set to -1
         /// </summary>
-        private void CountNeighboringBombs()
+        public void CountNeighboringBombs()
         {
             // Iterate through each cell in the grid
             for (int row = 0; row < Size; row++)

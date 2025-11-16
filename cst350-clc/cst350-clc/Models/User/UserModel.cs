@@ -63,7 +63,7 @@ namespace cst350_clc.Models.User
         public UserModel(int id)
         {
             Salt = RandomNumberGenerator.GetBytes(KeySize); // Create a new, unique Salting set for each UserModel
-            this.Id = id;
+            Id = id;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace cst350_clc.Models.User
             // Compare the newly hashed incoming password to the existing password hash
             // If they match, return true.
             // If they don't match, return false without revealing what this Hash contains.
-            return (PasswordHash == HashPassword(plain)) ? true : false;
+            return PasswordHash == HashPassword(plain) ? true : false;
         }
     }
 }

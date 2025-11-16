@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using cst350_clc.Models.Scores;
 using System.Linq;
+using MineSweeper;
 
 namespace cst350_clc.Controllers
 {

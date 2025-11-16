@@ -1,0 +1,46 @@
+﻿@model IEnumerable<cst350_clc.Models.GameSave.GameSaveModel>
+
+@{
+    ViewData["Title"] = "Saved Games";
+}
+
+<h1>Saved Games</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateSaved)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateSaved)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-action="LoadGame" asp-route-gameId="@item.Id">Load</a>
+                <a class="btn btn-danger" asp-action="DeleteSavedGame" asp-controller="Game" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

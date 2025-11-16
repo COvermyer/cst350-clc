@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using cst350_clc.Models.User;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
 
-namespace cst350_clc.Models.User
+namespace cst350_clc.Services.UserService
 {
     /// <summary>
     /// DAO class to pull UserModel data from DB
     /// </summary>
-    public class UserDAO : IUserManager
+    public class UserDAO : IUserDAO
     {
         /// <summary>
         /// CONNECTION_STRING constant will hold MySql.Data connection string data. Bad practice to put it here, but too bad.
@@ -47,21 +48,22 @@ namespace cst350_clc.Models.User
                     {
                         cmd.ExecuteNonQuery();
                         return Convert.ToInt32(cmd.LastInsertedId); // Return the ID of the new User
-                    } catch (MySqlException ex)
+                    }
+                    catch (MySqlException ex)
                     { // if cmd cannot be executed, return -1 for failure
-                        if (ex.Number == 1062) 
+                        if (ex.Number == 1062)
                         {// if caused by a uniquity check failure
                             if (ex.Message.Contains("username_UNIQUE"))
                                 return -2; // Username uniquity failure response
                             else if (ex.Message.Contains("email_UNIQUE"))
                                 return -3; // email uniquity failure response
-                            else 
+                            else
                                 return -4; // unknown uniquity failure response (should be unreachable, in theory)
-						}
-                        else 
+                        }
+                        else
                         {   // Exceptions not caused by Uniquity checks throw general -1 failure response
-							return -1;
-						}
+                            return -1;
+                        }
                     }
                 }
             }
@@ -107,7 +109,7 @@ namespace cst350_clc.Models.User
             using (MySqlConnection conn = new MySqlConnection(CONNECTION_STRING)) // prep disposal
             {
                 conn.Open(); // Open a MySQL server connection
-                String sql = "DELETE FROM `users` WHERE id = @id"; // Define the DELETE statement
+                string sql = "DELETE FROM `users` WHERE id = @id"; // Define the DELETE statement
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id); // Format the statement params
@@ -122,7 +124,7 @@ namespace cst350_clc.Models.User
                         return false;
                     }
 
-                    
+
                 }
             }
         }
@@ -212,7 +214,8 @@ namespace cst350_clc.Models.User
                                 State = reader.GetString("state")
                             };
                     }
-                } catch (MySqlException)
+                }
+                catch (MySqlException)
                 { // return null if execution of cmd fails
                     return null;
                 }
@@ -245,7 +248,7 @@ namespace cst350_clc.Models.User
                 { // return -1 if query fails (should only fail if the table doesn't exist)
                     return -1;
                 }
-                
+
             }
         }
     }
